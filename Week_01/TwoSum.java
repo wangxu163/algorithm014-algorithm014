@@ -10,16 +10,22 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] arr = {2,2};
-        int target = 4;
-        int[] ints = twoSum1(arr, target);
+        int target = 6;
+        int[] arr1 = {3,2,4};
+        int[] ints = twoSum1(arr1, target);
         PrintUtils.print(ints);
-        int[] ints2 = twoSum2(arr, target);
+        int[] arr2 = {3,2,4};
+        int[] ints2 = twoSum2(arr2, target);
         PrintUtils.print(ints2);
-        int[] ints3 = twoSum3(arr, target);
+        int[] arr3 = {3,2,4};
+        int[] ints3 = twoSum3(arr3, target);
         PrintUtils.print(ints3);
-        int[] ints4 = twoSum4(arr, target);
+        int[] arr4 = {3,2,4};
+        int[] ints4 = twoSum4(arr4, target);
         PrintUtils.print(ints4);
+        int[] arr5 = {3,2,4};
+        int[] ints5 = twoSum5(arr5, target);
+        PrintUtils.print(ints5);
     }
 
 
@@ -111,5 +117,43 @@ public class TwoSum {
             map.put(nums[i], i);
         }
         return new int[]{};
+    }
+
+    /**
+     *  twoSun2 改进版
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] twoSum5(int[] nums, int target) {
+        int[] ints = Arrays.copyOf(nums, nums.length);
+        int x = 0;
+        int y = 0;
+        Arrays.sort(nums);
+        for (int i = 0, j = nums.length - 1; i < j; ) {
+            int temp = nums[i] + nums[j];
+            if (temp == target) {
+               x = nums[i];
+               y = nums[j];
+               break;
+            } else if (temp > target) {
+                int i1 = nums[i] < nums[j] ? j-- : i++;
+            } else if (temp < target) {
+                int i1 = nums[i] < nums[j] ? i++ : j--;
+            }
+        }
+        int a = -1;
+        int b = -1;
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] == x && a == -1) {
+                a = i;
+                continue;
+            }
+            if (ints[i] == y && b == -1) {
+                b = i;
+                continue;
+            }
+        }
+        return new int[]{a,b};
     }
 }
