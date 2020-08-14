@@ -43,9 +43,12 @@ public class Sum3 {
         if (nums == null || nums.length <= 2) {
             return Collections.emptyList();
         }
+        Arrays.sort(nums);
         Set<List<Integer>> list = new LinkedHashSet<>();
         for (int i = 0; i < nums.length - 2; i++) {
             int target = -nums[i];
+            if (target < 0) break;
+            if (i >0 && nums[i] == nums[i-1]) continue;
             Map<Integer, Integer> map = new HashMap<>(nums.length-1);
             for (int j = i + 1; j < nums.length; j++) {
                 int value = target - nums[j];
