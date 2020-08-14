@@ -83,11 +83,11 @@ public class Sum3 {
                 if (sum > 0) {
                     while (i < j && nums[j] == nums[--j]) ;
                 } else if (sum < 0) {
-                    while (i<j && nums[i] == nums[++i]);
+                    while (i < j && nums[i] == nums[++i]) ;
                 }else {
                     list.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    while (i<j && nums[i] == nums[++i]);
-                    while (i<j && nums[j]==nums[--j]);
+                    while (i < j && nums[i] == nums[++i]) ;
+                    while (i < j && nums[j] == nums[--j]) ;
                 }
             }
         }
