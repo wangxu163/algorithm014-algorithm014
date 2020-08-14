@@ -81,7 +81,7 @@ public class Sum3 {
             while (i < j) {
                 int sum = nums[i] + nums[j] + nums[k];
                 if (sum > 0) {
-                    while (i<j && nums[j]==nums[--j]);
+                    while (i < j && nums[j] == nums[--j]) ;
                 } else if (sum < 0) {
                     while (i<j && nums[i] == nums[++i]);
                 }else {
