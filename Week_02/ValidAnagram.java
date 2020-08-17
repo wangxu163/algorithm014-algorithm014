@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * 有效的字母异位词
+ * 242 有效的字母异位词
  * valid-anagram
  * https://leetcode-cn.com/problems/valid-anagram/
  */
