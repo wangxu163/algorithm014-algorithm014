@@ -45,6 +45,9 @@ public class LargestRectangleInHistogram {
     /**
      * stack
      * @param heights
+     * push 决定左边界
+     * pop 决定右边界
+     * 栈通过比较大小决定左右边界
      * @return
      */
     public static int largestRectangleArea2(int[] heights) {
