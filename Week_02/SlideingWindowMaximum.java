@@ -11,7 +11,7 @@ public class SlideingWindowMaximum {
 
 
     /**
-     * 暴力求解
+     * 暴力求解1
      * @param nums
      * @param k
      * @return
@@ -31,7 +31,12 @@ public class SlideingWindowMaximum {
         return ret;
     }
 
-
+    /**
+     * 暴力求解2
+     * @param nums
+     * @param k
+     * @return
+     */
     public static int[] maxSlidingWindow2(int[] nums, int k) {
         int[] ret = new int[nums.length - k + 1];
         int index = 0;
