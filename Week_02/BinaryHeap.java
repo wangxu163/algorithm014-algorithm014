@@ -59,7 +59,7 @@ public class BinaryHeap {
 
     /**
      * Deletes element at index x
-     * Complexity: O(log N)
+     * ComplexitLay: O(log N)
      */
     public int delete(int x) {
         if (isEmpty()) {
