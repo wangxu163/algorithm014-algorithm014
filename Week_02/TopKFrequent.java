@@ -29,20 +29,17 @@ public class TopKFrequent {
         });
         for (Integer key:map.keySet()){
             if (queue.size() < k) {
-                queue.offer(key);
+                queue.add(key);
             } else if (map.get(key) > map.get(queue.peek())) {
                 queue.poll();
-                queue.offer(key);
+                queue.add(key);
             }
         }
-        List<Integer> list = new ArrayList<>();
-        while (!queue.isEmpty()) {
-            list.add(queue.poll());
+        int size = queue.size();
+        int[] ret = new int[size];
+        for (int i = 0; i < size; i++) {
+            ret[i] = queue.poll();
         }
-        int[] ret = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            ret[i] = list.get(i);
-        }
-        return ret;
+       return ret;
     }
 }
