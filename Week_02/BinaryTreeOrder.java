@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * 二叉树的前、中、后序遍历
@@ -58,6 +59,27 @@ public class BinaryTreeOrder {
         if (root.right != null) {
             inhelper(root.right, list);
         }
+    }
+
+    /**
+     * 中序遍历 栈
+     * @param root
+     * @return
+     */
+    public List <Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            list.add(curr.val);
+            curr = curr.right;
+        }
+        return list;
     }
     public void prehelper(TreeNode root, List<Integer> list) {
         if (root == null) {
