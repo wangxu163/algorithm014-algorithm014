@@ -8,13 +8,6 @@ import java.util.Queue;
 public class RevertBinaryTree {
 
 
-    public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
-
     /**
      * 递归
      * @param root
