@@ -17,7 +17,7 @@ public class SubSets {
     }
 
     /**
-     * 迭代
+     * 递归
      * @param ans
      * @param nums
      * @param list
